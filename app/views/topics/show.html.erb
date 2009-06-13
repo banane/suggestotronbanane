@@ -6,6 +6,7 @@
 <p>
   <b>Description:</b>
   <%=h @topic.description %>
+  <%= render :partial => 'button', :locals => {:topic => @topic} %>
 </p>
 
 
