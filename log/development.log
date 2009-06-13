@@ -1,0 +1,8 @@
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-06-13 11:59:44) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 107ms (View: 14, DB: 1) | 200 OK [http://localhost/rails/info/properties]
