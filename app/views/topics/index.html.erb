@@ -10,13 +10,15 @@
   <tr>
     <td><%=h topic.title %></td>
     <td><%=h topic.description %></td>
-<td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
+   <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
 
 <td>
 <%=h topic.created_at %>
 </td>
 <td>
-<%=h Vote.count %>
+<%=h topic.votes.count
+%> votes
+
 </td>    
     <td><%= link_to 'Show', topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
