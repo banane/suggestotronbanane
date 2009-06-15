@@ -12,7 +12,13 @@
     <td><%=h topic.description %></td>
 <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
 
-<td><%= link_to 'Show', topic %></td>
+<td>
+<%=h topic.created_at %>
+</td>
+<td>
+<%=h Vote.count %>
+</td>    
+    <td><%= link_to 'Show', topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
