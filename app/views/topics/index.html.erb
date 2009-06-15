@@ -6,7 +6,9 @@
     <th>Description</th>
   </tr>
 
-<% @topics.each do |topic| %>
+<%
+  Date::civil()
+  @topics.each do |topic| %>
   <tr>
     <td><%=h topic.title %></td>
     <td><%=h topic.description %></td>

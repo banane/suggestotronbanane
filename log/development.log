@@ -3986,3 +3986,160 @@ Rendered topics/_button (0.4ms)
 Rendered topics/_button (0.2ms)
   [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
 Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:17:14) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:17:57) [GET]
+  [4;35;1mTopic Load (0.7ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::ITALY) on line #16 of app/views/topics/index.html.erb:
+13:    <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
+14: 
+15: <td>
+16: <%=h topic.created_at(y=1582, w=41, d=5, sg=ITALY) %>
+17: </td>
+18: <td>
+19: <%=h topic.votes.count
+
+    app/views/topics/index.html.erb:16
+    app/views/topics/index.html.erb:9:in `each'
+    app/views/topics/index.html.erb:9
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (50.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:18:10) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:20:41) [GET]
+  [4;35;1mTopic Load (0.7ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+
+ActionView::TemplateError (undefined method `civil' for Sat Jun 13 20:53:28 UTC 2009:Time) on line #16 of app/views/topics/index.html.erb:
+13:    <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
+14: 
+15: <td>
+16: <%=h topic.created_at::civil %>
+17: </td>
+18: <td>
+19: <%=h topic.votes.count
+
+    app/views/topics/index.html.erb:16
+    app/views/topics/index.html.erb:9:in `each'
+    app/views/topics/index.html.erb:9
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:20:50) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:22:35) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:22:36) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:24:24) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:24:26) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-15 01:35:49) [GET]
+  [4;35;1mTopic Load (0.8ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613204157)
+Migrating to CreateVotes (20090613212354)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
