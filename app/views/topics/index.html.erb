@@ -14,12 +14,31 @@
     <td><%=h topic.description %></td>
    <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
 
+<td><%=h topic.votes.count %> votes. </td>
+
 <td>
-<%=h topic.created_at %>
+Voted on: 
+<%=h Date::DAYNAMES[topic.created_at.wday] %>,
+<%=h Date::MONTHNAMES[topic.created_at.month] %> 
+
+<%
+def ordinalize(number)
+     if (11..13).include?(number.to_i % 100)
+       "#{number}th"
+     else
+       case number.to_i % 10
+         when 1; "#{number}st"
+         when 2; "#{number}nd"
+         when 3; "#{number}rd"
+       else    "#{number}th"
+     end
+  end
+end
+%>
+<%=h ordinalize(topic.created_at.mday) %>
+
 </td>
 <td>
-<%=h topic.votes.count
-%> votes
 
 </td>    
     <td><%= link_to 'Show', topic %></td>
