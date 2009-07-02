@@ -7026,3 +7026,71 @@ Rendered topics/_button (0.4ms)
 Rendered topics/_button (0.2ms)
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
 Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 20:08:47) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/application
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Completed in 33ms (View: 26, DB: 2) | 200 OK [http://localhost/topics]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-01 20:08:50) [GET]
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 20:08:56) [GET]
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/application
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+
+ActionView::TemplateError (undefined method `authenticate_with_http_basic' for #<ActionView::Base:0x2440758>) on line #11 of app/views/layouts/application.html.erb:
+8:   <%= stylesheet_link_tag 'scaffold' %>
+9: </head>
+10: <body>
+11:  <% if logged_in? %>
+12:        <%= link_to "Logout", logout_path %>
+13:      <% else %>
+14:        <%= link_to "Sign Up", new_user_path %>
+
+    lib/authenticated_system.rb:113:in `login_from_basic_auth'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    app/views/layouts/application.html.erb:11
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613204157)
+Migrating to CreateVotes (20090613212354)
+Migrating to CreateUsers (20090702022715)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m

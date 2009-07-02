@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  before_filter :authenticated?
+
   def create 
     @topic = Topic.find(params[:topic_id])
     @vote = @topic.votes.create!

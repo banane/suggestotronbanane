@@ -8,4 +8,13 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  def authenticated?
+   if !logged_in?
+     flash[:notice] = "You must login to do that"
+     redirect_to root_path
+     false
+   end 
+ end 
+
 end
