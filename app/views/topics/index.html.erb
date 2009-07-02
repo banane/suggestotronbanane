@@ -10,14 +10,14 @@
   Date::civil()
   @topics.each do |topic| %>
   <tr>
-    <td><%=h topic.title %></td>
+    <td><%= link_to topic.title, topic %></td>
     <td><%=h topic.description %></td>
    <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
 
 <td><%=h topic.votes.count %> votes. </td>
 
 <td>
-Voted on: 
+Created on:
 <%=h Date::DAYNAMES[topic.created_at.wday] %>,
 <%=h Date::MONTHNAMES[topic.created_at.month] %> 
 
@@ -41,7 +41,8 @@ end
 <td>
 
 </td>    
-    <td><%= link_to 'Show', topic %></td>
+<!--    <td><%= link_to 'Show', topic %></td>
+-->
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -50,4 +51,4 @@ end
 
 <br />
 
-<%= link_to 'New topic', new_topic_path %>
+<%= link_to 'Add', new_topic_path %>

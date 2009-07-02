@@ -6087,3 +6087,942 @@ Rendered topics/_button (0.5ms)
 Rendered topics/_button (0.2ms)
   [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
 Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/topics]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613204157)
+Migrating to CreateVotes (20090613212354)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:44:41) [GET]
+  [4;36;1mTopic Load (0.8ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:44:44) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:44:44', '2009-06-17 00:44:44')[0m
+Redirected to http://localhost:3000/topics
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:44:44) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-16 17:44:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTopic Load (0.9ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+Rendering template within layouts/topics
+Rendering topics/show
+Rendered topics/_button (0.6ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/topics/2]
+
+
+Processing TopicsController#edit (for 127.0.0.1 at 2009-06-16 17:44:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTopic Load (0.2ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+Rendering template within layouts/topics
+Rendering topics/edit
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/topics/2/edit]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2009-06-16 17:45:49) [GET]
+Rendering template within layouts/topics
+Rendering topics/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:45:52) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:46:51) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;36;1mTopic Load (0.2ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mVote Create (0.5ms)[0m   [0;1mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:46:51', '2009-06-17 00:46:51')[0m
+Redirected to http://localhost:3000/topics
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:46:51) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:04) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;36;1mTopic Load (0.3ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mVote Create (0.8ms)[0m   [0;1mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:04', '2009-06-17 00:48:04')[0m
+Redirected to http://localhost:3000/topics
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:04) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2009-06-16 17:48:10) [GET]
+Rendering template within layouts/topics
+Rendering topics/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:13) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:19) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.4ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.6ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:19', '2009-06-17 00:48:19')[0m
+Redirected to http://localhost:3000/topics
+Completed in 90ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:19) [GET]
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:20) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.3ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:20', '2009-06-17 00:48:20')[0m
+Redirected to http://localhost:3000/topics
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:20) [GET]
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:21) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:21', '2009-06-17 00:48:21')[0m
+Redirected to http://localhost:3000/topics
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:21) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:21) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:21', '2009-06-17 00:48:21')[0m
+Redirected to http://localhost:3000/topics
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:21) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:22) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:22', '2009-06-17 00:48:22')[0m
+Redirected to http://localhost:3000/topics
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:22) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:22) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (0.4ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:22', '2009-06-17 00:48:22')[0m
+Redirected to http://localhost:3000/topics
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:22) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-06-16 17:48:22) [POST]
+  Parameters: {"topic_id"=>"2", "authenticity_token"=>"Z2YIyRUUH0gGR28zPJVZEXtJcLm6jpucuhq5qBQuSTE="}
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 2) [0m
+  [4;35;1mVote Create (122.1ms)[0m   [0mINSERT INTO "votes" ("topic_id", "updated_at", "created_at") VALUES(2, '2009-06-17 00:48:22', '2009-06-17 00:48:22')[0m
+Redirected to http://localhost:3000/topics
+Completed in 140ms (DB: 122) | 302 Found [http://localhost/topics/2/votes]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 17:48:22) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:03:08) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.6ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:03:37) [GET]
+  [4;36;1mTopic Load (0.9ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:03:57) [GET]
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #13 of app/views/topics/index.html.erb:
+10:   Date::civil()
+11:   @topics.each do |topic| %>
+12:   <tr>
+13:     <td><%=h link_to topic.title topic %></td>
+14:     <td><%=h topic.description %></td>
+15:    <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
+16: 
+
+    app/views/topics/index.html.erb:13
+    app/views/topics/index.html.erb:11:in `each'
+    app/views/topics/index.html.erb:11
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (55.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:04:02) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:04:26) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.3ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-06-16 18:04:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTopic Load (0.2ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 1) [0m
+Rendering template within layouts/topics
+Rendering topics/show
+Rendered topics/_button (0.4ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/topics/1]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:04:50) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:05:03) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+ERROR: compiling _run_erb_app47views47topics47index46html46erb RAISED compile error
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:48: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47topics47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing topics</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <th>Title</th>\n"
+@output_buffer.concat "    <th>Description</th>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "\n"
+
+  Date::civil()
+  @topics.each do |topic| ; @output_buffer.concat "\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to topic.title, topic ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat((h topic.description ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "   <td>"; @output_buffer.concat(( render :partial => 'button', :locals => {:topic => topic} ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<td>"; @output_buffer.concat((h topic.votes.count ).to_s); @output_buffer.concat " votes. </td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<td>\n"
+@output_buffer.concat "Created on:\n"
+@output_buffer.concat((h Date::DAYNAMES[topic.created_at.wday] ).to_s); @output_buffer.concat ",\n"
+@output_buffer.concat((h Date::MONTHNAMES[topic.created_at.month] ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\n"
+
+def ordinalize(number)
+     if (11..13).include?(number.to_i % 100)
+       "#{number}th"
+     else
+       case number.to_i % 10
+         when 1; "#{number}st"
+         when 2; "#{number}nd"
+         when 3; "#{number}rd"
+       else    "#{number}th"
+     end
+  end
+end
+@output_buffer.concat "\n"
+@output_buffer.concat((h ordinalize(topic.created_at.mday) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</td>\n"
+@output_buffer.concat "<td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</td>    \n"
+@output_buffer.concat "    <td>"; @output_buffer.concat((# link_to 'Show', topic ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Edit', edit_topic_path(topic) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "  </tr>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'New topic', new_topic_path ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/anna/Sites/suggestorama/app/controllers/topics_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:48: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57: syntax error, unexpected kEND, expecting ')') on line #48 of app/views/topics/index.html.erb:
+45:     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+46:     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+47:   </tr>
+48: <% end %>
+49: </table>
+50: 
+51: <br />
+
+    app/views/topics/index.html.erb:57:in `compile!'
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (49.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:05:07) [GET]
+  [4;35;1mTopic Load (0.8ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+ERROR: compiling _run_erb_app47views47topics47index46html46erb RAISED compile error
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:48: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47topics47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing topics</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <th>Title</th>\n"
+@output_buffer.concat "    <th>Description</th>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "\n"
+
+  Date::civil()
+  @topics.each do |topic| ; @output_buffer.concat "\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to topic.title, topic ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat((h topic.description ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "   <td>"; @output_buffer.concat(( render :partial => 'button', :locals => {:topic => topic} ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<td>"; @output_buffer.concat((h topic.votes.count ).to_s); @output_buffer.concat " votes. </td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<td>\n"
+@output_buffer.concat "Created on:\n"
+@output_buffer.concat((h Date::DAYNAMES[topic.created_at.wday] ).to_s); @output_buffer.concat ",\n"
+@output_buffer.concat((h Date::MONTHNAMES[topic.created_at.month] ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "\n"
+
+def ordinalize(number)
+     if (11..13).include?(number.to_i % 100)
+       "#{number}th"
+     else
+       case number.to_i % 10
+         when 1; "#{number}st"
+         when 2; "#{number}nd"
+         when 3; "#{number}rd"
+       else    "#{number}th"
+     end
+  end
+end
+@output_buffer.concat "\n"
+@output_buffer.concat((h ordinalize(topic.created_at.mday) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</td>\n"
+@output_buffer.concat "<td>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</td>    \n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( #link_to 'Show', topic ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Edit', edit_topic_path(topic) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    <td>"; @output_buffer.concat(( link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "  </tr>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<br />\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'New topic', new_topic_path ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/anna/Sites/suggestorama/app/controllers/topics_controller.rb:7:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:48: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/anna/Sites/suggestorama/app/views/topics/index.html.erb:57: syntax error, unexpected kEND, expecting ')') on line #48 of app/views/topics/index.html.erb:
+45:     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+46:     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+47:   </tr>
+48: <% end %>
+49: </table>
+50: 
+51: <br />
+
+    app/views/topics/index.html.erb:57:in `compile!'
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (46.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:05:19) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.7ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:05:40) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 84ms (View: 78, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:06:05) [GET]
+  [4;36;1mTopic Load (0.6ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+
+ActionView::TemplateError (undefined method `to_button' for #<ActionView::Base:0x254bc38>) on line #54 of app/views/topics/index.html.erb:
+51: 
+52: <br />
+53: 
+54: <%= to_button 'Add', new_topic_path %>
+
+    app/views/topics/index.html.erb:54
+    app/controllers/topics_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-06-16 18:06:15) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 84ms (View: 15, DB: 1) | 200 OK [http://localhost/topics]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613204157)
+Migrating to CreateVotes (20090613212354)
+  [4;36;1mSQL (17.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("votes")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20090613204157)
+Migrating to CreateVotes (20090613212354)
+Migrating to CreateUsers (20090702022715)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090702022715')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votes")[0m
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 19:36:28) [GET]
+  [4;36;1mTopic Load (1.0ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (113.8ms)
+  [4;35;1mSQL (28.8ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.3ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 466ms (View: 389, DB: 30) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 19:36:32) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#show (for 127.0.0.1 at 2009-07-01 19:38:30) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mTopic Load (0.1ms)[0m   [0;1mSELECT * FROM "topics" WHERE ("topics"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Topic with ID=login):
+  app/controllers/topics_controller.rb:16:in `show'
+
+Rendered rescues/_trace (113.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TopicsController#users (for 127.0.0.1 at 2009-07-01 19:41:06) [GET]
+  Parameters: {"id"=>"new"}
+
+ActionController::UnknownAction (No action responded to users. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 19:41:25) [GET]
+Rendering users/new
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 19:41:51) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"55555", "password"=>"55555", "login"=>"banana", "email"=>"banana@banana.com"}, "commit"=>"Sign up", "authenticity_token"=>"mDCstpMZpQoxnBQcJtveJs0Cv0naNGSuh8AZijrCvlE="}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'banana') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'banana@banana.com') LIMIT 1[0m
+Rendering users/new
+Completed in 22ms (View: 3, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 19:42:04) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"78907890", "password"=>"78907890", "login"=>"banana", "email"=>"banana@banana.com"}, "commit"=>"Sign up", "authenticity_token"=>"mDCstpMZpQoxnBQcJtveJs0Cv0naNGSuh8AZijrCvlE="}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'banana') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'banana@banana.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "email", "created_at") VALUES('', 'ecc0d1b952351d1b9be693de117e91442e8faae5', '2009-07-02 02:42:04', 'a060fca50a2df8e0cc3f1eaab492c1e0cf8d184f', NULL, NULL, 'banana', 'banana@banana.com', '2009-07-02 02:42:04')[0m
+Redirected to http://localhost:3000/
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 19:42:11) [GET]
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 19:42:26) [GET]
+Rendering users/new
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 19:42:44) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"78908990", "password"=>"78907890", "login"=>"anna", "email"=>"banane@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"mDCstpMZpQoxnBQcJtveJs0Cv0naNGSuh8AZijrCvlE="}
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'anna') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'banane@gmail.com') LIMIT 1[0m
+Rendering users/new
+Completed in 26ms (View: 3, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 19:42:55) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"12341234", "password"=>"12341234", "login"=>"anna", "email"=>"banane@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"mDCstpMZpQoxnBQcJtveJs0Cv0naNGSuh8AZijrCvlE="}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'anna') LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'banane@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "email", "created_at") VALUES('', '42b104af869b086ddbdb48b48dfb43bfc582cfb9', '2009-07-02 02:42:55', 'd1c0f3c81a956ff9599f99e26f46f37abfed2579', NULL, NULL, 'anna', 'banane@gmail.com', '2009-07-02 02:42:55')[0m
+Redirected to http://localhost:3000/
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 19:42:57) [GET]
+  [4;36;1mTopic Load (0.7ms)[0m   [0;1mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/topics]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-01 19:52:26) [GET]
+  [4;35;1mTopic Load (0.6ms)[0m   [0mSELECT * FROM "topics" [0m
+Rendering template within layouts/topics
+Rendering topics/index
+Rendered topics/_button (0.4ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 1) [0m
+Rendered topics/_button (0.2ms)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE ("votes".topic_id = 2) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/topics]
