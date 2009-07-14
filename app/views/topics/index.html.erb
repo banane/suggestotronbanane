@@ -12,8 +12,8 @@
   <tr>
     <td><%= link_to topic.title, topic %></td>
     <td><%=h topic.description %></td>
-   <td><%= render :partial => 'button', :locals => {:topic => topic} %></td>
-
+   <td>
+	<%= render :partial => 'button', :locals => {:topic => topic} %></td>
 <td><%=h topic.votes.count %> votes. </td>
 
 <td>
