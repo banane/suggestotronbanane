@@ -1,9 +1,13 @@
 <h1>Listing topics</h1>
 
-<table>
+<table border=1>
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>Tally</th>
+	<th>Vote</th>
+    <th>Created Date</th>
+	<th colspan=2>actions</th>
   </tr>
 
 <%
@@ -17,7 +21,6 @@
 <td><%=h topic.votes.count %> votes. </td>
 
 <td>
-Created on:
 <%=h Date::DAYNAMES[topic.created_at.wday] %>,
 <%=h Date::MONTHNAMES[topic.created_at.month] %> 
 
